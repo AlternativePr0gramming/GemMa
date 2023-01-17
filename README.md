@@ -8,12 +8,16 @@ The dual camera set-up brings an outlier reduction, as an obscured hand in one c
 ## Set-Up
 Gemini is only supported in C, one way to still work with the software is by making a custom library and access it through c-types, the next steps will explain (hopefully) everything.
 
+### Azure Kinect DK
+
+The main camera works with an Azure Kinect DK, you can ignore this part of the set-up if you want to work with a normal camera. Otherwise just follow the steps in https://github.com/ibaiGorordo/pyKinectAzure, there are plenty of functionalities that you could experiment with and further integrate into this project.
+
 ### Making your own custom Gemini library
 
 _A custom library is already included, but only returns part of the entire possible data (the 21 landmarks of each hand). If you want more data from Gemini, you need to make your own library._
 
 1. Install Gemini from Ultraleap (in Windows!).
-2. Follow Ultraleap's README.md to make an environment through cmake (usually found in C:\Program Files\Ultraleap\LeapSDK), I recommend €€
+2. Follow Ultraleap's README.md to make an environment through cmake (usually found in C:\Program Files\Ultraleap\LeapSDK), I recommend working within their samples page.
 3. Edit your CMakeLists.txt file to make a library (this step can be skipped if you use the included CMakeLists.txt in the /assets folder):
     1. Each #include which uses Gemini needs to be added as a library and then this library needs to be linked with the Gemini library.
     2. For the header of the library file, add __declspec(dllexport) to each method that you would want to use in Python (void loadLandmarks() would become __declspec(dllexport) void loadLandmarks()).
@@ -22,6 +26,11 @@ _A custom library is already included, but only returns part of the entire possi
 
 ### Running the software
 Most computers are unable to quickly run through hundreds of files for quick gesture recognition, because of this the data set has been split in categories that each test similar traits, see the PDF to see what each category tests.
+
+#### Requirements
+As previously mentioned, the software runs in Python 3.7, besides this there are a bunch of other imports that are used. To install of these, just run:
+
+`pip install -r requirements.txt`
 #### Creating a data set
 Creating your own category and data set is done by running sign_recorder.py in the following way:
 

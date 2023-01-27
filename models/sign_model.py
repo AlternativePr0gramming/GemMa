@@ -4,6 +4,7 @@ import numpy as np
 
 from models.hand_model import HandModel
 
+# Structure and base logic taken from: https://github.com/gabguerin/Sign-Language-Recognition--MediaPipe-DTW.
 
 class SignModel(object):
     def __init__(

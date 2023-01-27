@@ -1,5 +1,6 @@
 import numpy as np
 
+# Structure and base logic taken from: https://github.com/gabguerin/Sign-Language-Recognition--MediaPipe-DTW.
 
 class PoseModel(object):
     def __init__(self, landmarks):

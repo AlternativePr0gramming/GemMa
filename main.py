@@ -10,7 +10,7 @@ from webcam_manager import WebcamManager
 from leap_listener import LeapListener
 
 # Structure and base logic taken from: https://github.com/gabguerin/Sign-Language-Recognition--MediaPipe-DTW.
-# Edited to enable Leap Motion (LM) input and contains an own recording program for the Azure Kinect and LM.
+# Edited to enable Gemini input and it also includes its own recording program for the Azure Kinect and LM.
 # Program runs in Python 3.7.3, other versions could possibly not work.
 
 is_recording = False
@@ -69,7 +69,7 @@ if __name__ == "__main__":
                                                                                listener.lh_landmarks[-1],
                                                                                listener.rh_landmarks[-1])
 
-            # If the Azure Kinect isn't recording, then neither will the Leap Motion.
+            # If the Azure Kinect isn't recording, then neither will the 3Di.
             if not is_recording:
                 listener.reset_landmarks()
 

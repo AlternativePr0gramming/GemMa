@@ -3,6 +3,7 @@ from typing import List
 import numpy as np
 import mediapipe as mp
 
+# Structure and base logic taken from: https://github.com/gabguerin/Sign-Language-Recognition--MediaPipe-DTW.
 
 class HandModel(object):
     """

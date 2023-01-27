@@ -31,6 +31,7 @@ Most computers are unable to quickly run through hundreds of files for quick ges
 As previously mentioned, the software runs in Python 3.7, besides this there are a bunch of other imports that are used. To install of these, just run:
 
 `pip install -r requirements.txt`
+
 #### Creating a data set
 Creating your own category and data set is done by running sign_recorder.py in the following way:
 
